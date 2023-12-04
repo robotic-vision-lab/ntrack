@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="NTrack">
+  <meta name="keywords" content="NTrack, cotton, tracking">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NTrack: A Multiple-Object Tracker and Dataset for Infield Cotton Boll
+Counting</title>
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">NTrack: A Multiple-Object Tracker and Dataset for Infield Cotton Boll
+Counting</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://keunhong.com">Md Ahmed Al Muzaddid</a>,</span>
+            <span class="author-block">
+              <a href="https://utkarshsinha.com">William Beksi</a>,</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">University of Texas, Arlington</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=VTUNa2EoG0U"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Presentation</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=VTUNa2EoG0U"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/tracking_teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf"><em>NTrack</em></span> counting cotton bolls from the video.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/drone_shot_lowres.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/cotton_cam_view.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/vid16_01_detection.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/vid16_01_tracking.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+     <div class="content">
+          <h2 class="title is-3">Tracking Pipeline</h2>
+          <img src="./static/images/ntrack_pipeline.PNG"
+                 class="interpolation-image"
+                 alt=""/>
+
+     </div>
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <!-- Paper video. -->
+
+
+    </div>
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+           In agriculture, automating the accurate tracking of fruits, vegetables, and
+fiber is a very tough problem. The issue becomes extremely challenging in
+dynamic field environments. Yet, this information is critical for making
+day-to-day agricultural decisions, assisting breeding programs, and much more.
+          </p>
+          <p>
+            To tackle this dilemma, we introduce <em>NTrack</em>, a novel multiple object
+tracking framework based on the linear relationship between the locations of
+<em>neighboring</em> tracks. <em>NTrack</em> computes dense optical flow and
+utilizes particle filtering to guide each tracker. Correspondences between
+detections and tracks are found through data association via direct observations
+and indirect cues, which are then combined to obtain an updated observation. Our
+modular multiple object tracking system is independent of the underlying
+detection method, thus allowing for the interchangeable use of any off-the-shelf
+object detector. We show the efficacy of our approach on the task of tracking
+and counting infield cotton bolls.
+          </p>
+          <p>
+           Experimental results show that our system
+exceeds contemporary tracking and cotton boll-based counting methods by a large
+margin. Furthermore, we publicly release the <em>first</em> annotated cotton
+boll video dataset to the research community.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+
+    <!-- Dataset. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Dataset</h2>
+        <div class="content has-text-justified">
+          <p>
+            To construct the <em>TexCot22</em> dataset we captured multiple video sequences
+            for training and testing. Similar to other tracking datasets, each tracking
+            sequence is 10 to 20 seconds in length. The dataset consists of a total of 30
+            sequences of which 17 are for training and the remaining 13 are for testing.
+
+            The video sequences are captured at 4K resolution and at distinct frame rates
+            (e.g., 10, 15, 30). There are typically 2 to 10 cotton bolls per cluster. The
+            average width and height of an annotated bounding box is approximately 230*210
+            pixels.
+
+            To make the dataset robust to environmental conditions, we recorded the field
+            videos at separate times of day to account for varying lighting conditions. In
+            total, there are roughly 30*300 frames with 150,000 labeled instances. On
+            average there are 70 unique cotton bolls in each sequence.
+          </p>
+        </div>
+        <br/>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{ahmed2023ntrack,
+  author    = {Md Ahmed Al Muzaddid, William Beksi},
+  title     = {NTrack: A Multiple-Object Tracker and Dataset for Infield Cotton Boll Counting},
+  journal   = {T-ASE},
+  year      = {2023},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/dummy.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
